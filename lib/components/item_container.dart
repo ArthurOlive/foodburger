@@ -1,20 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodburger/controllers/item_list_controller.dart';
+import 'package:foodburger/models/Item.dart';
+import 'package:foodburger/screens/item_confirm_page.dart';
 import 'package:foodburger/style/font_text.dart';
 
-class Burger extends StatelessWidget {
+class Food extends StatelessWidget {
   final Image? imageIcon;
   final String? name;
   final String? description;
   final String? price;
-  final String? cod;
+  final int cod;
 
-  const Burger(
+  const Food(
       {Key? key,
       this.name,
       this.price,
       this.description,
-      this.cod,
+      required this.cod,
       this.imageIcon})
       : super(key: key);
 
@@ -35,6 +38,15 @@ class Burger extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
+          var item;
+          for (int i = 0; i < ItemListController.instance.itens.length; i++) {
+            if (ItemListController.instance.itens[i].cod == cod) {
+              item = ItemListController.instance.itens[i];
+            }
+          }
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => Confirm(item: item)),
+          );
           print("Clicked container $cod");
         },
         borderRadius: BorderRadius.circular(5),

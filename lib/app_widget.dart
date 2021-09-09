@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodburger/controllers/item_list_controller.dart';
 import 'package:foodburger/screens/history_page.dart';
+import 'package:foodburger/screens/item_confirm_page.dart';
 import 'package:foodburger/screens/menu_page.dart';
 import 'package:foodburger/screens/payment_cart_page.dart';
 
@@ -9,19 +11,21 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-          primarySwatch: Colors.red,
-          primaryColorDark: Colors.red,
-          brightness: Brightness.light),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => DefaultTabController(
-              length: 3,
-              child: MenuPage(),
-            ),
-        '/history': (context) => HistoryPage(),
-        '/payment_cart': (context) => PaymentCart(),
+    return AnimatedBuilder(
+      animation: ItemListController.instance,
+      builder: (context, child) {
+        return MaterialApp(
+          theme: ThemeData(
+              primarySwatch: Colors.red,
+              primaryColorDark: Colors.red,
+              brightness: Brightness.light),
+          initialRoute: '/',
+          routes: {
+            '/': (context) => MenuPage(),
+            '/history': (context) => HistoryPage(),
+            '/payment_cart': (context) => PaymentCart(),
+          },
+        );
       },
     );
   }
