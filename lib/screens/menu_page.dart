@@ -62,7 +62,10 @@ List<Food> didMoutBurgers() {
   for (int i = 0; i < ItemListController.instance.itens.length; i++) {
     if (ItemListController.instance.itens[i].type == ItemType.BURGER) {
       list.add(Food(
-        imageIcon: Image.asset(ItemListController.instance.itens[i].imageUrl),
+        imageIcon: Image.asset(
+          ItemListController.instance.itens[i].imageUrl,
+          fit: BoxFit.cover,
+        ),
         name: ItemListController.instance.itens[i].name,
         price: ItemListController.instance.itens[i].price,
         description: ItemListController.instance.itens[i].description,
@@ -80,7 +83,10 @@ List<Food> didMoutAcompanhamentos() {
   for (int i = 0; i < ItemListController.instance.itens.length; i++) {
     if (ItemListController.instance.itens[i].type == ItemType.ACOMPANHAMENTO) {
       list.add(Food(
-        imageIcon: Image.asset(ItemListController.instance.itens[i].imageUrl),
+        imageIcon: Image.asset(
+          ItemListController.instance.itens[i].imageUrl,
+          fit: BoxFit.cover,
+        ),
         name: ItemListController.instance.itens[i].name,
         price: ItemListController.instance.itens[i].price,
         description: ItemListController.instance.itens[i].description,
@@ -98,7 +104,8 @@ List<Food> didMoutBebidas() {
   for (int i = 0; i < ItemListController.instance.itens.length; i++) {
     if (ItemListController.instance.itens[i].type == ItemType.BEBIDA) {
       list.add(Food(
-        imageIcon: Image.asset(ItemListController.instance.itens[i].imageUrl),
+        imageIcon: Image.asset(ItemListController.instance.itens[i].imageUrl,
+            fit: BoxFit.cover),
         name: ItemListController.instance.itens[i].name,
         price: ItemListController.instance.itens[i].price,
         description: ItemListController.instance.itens[i].description,

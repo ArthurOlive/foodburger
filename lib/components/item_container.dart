@@ -63,6 +63,11 @@ class Food extends StatelessWidget {
                 Container(
                   width: 140,
                   height: 140,
+                  clipBehavior: Clip.hardEdge,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: imageIcon,
                 ),
                 Flexible(

@@ -33,8 +33,9 @@ class Confirm extends StatelessWidget {
             Container(
               width: double.infinity,
               height: 140,
+              clipBehavior: Clip.hardEdge,
               child: FittedBox(
-                  child: Image.asset(item.imageUrl), fit: BoxFit.contain),
+                  child: Image.asset(item.imageUrl), fit: BoxFit.cover),
               decoration: BoxDecoration(
                 color: Colors.grey,
                 borderRadius: BorderRadius.circular(10),
