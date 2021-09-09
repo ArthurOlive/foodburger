@@ -1,7 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodburger/components/bottom_menu.dart';
 import 'package:foodburger/components/burger_container.dart';
 
 class MenuPage extends StatelessWidget {
@@ -42,21 +41,8 @@ class MenuPage extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book),
-            label: 'Cardapio',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.access_time_filled_outlined),
-            label: 'Historico',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_rounded),
-            label: 'Compras',
-          ),
-        ],
+      bottomNavigationBar: BottomNavigatorMenu(
+        option: 0,
       ),
     );
   }
