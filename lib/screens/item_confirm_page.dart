@@ -23,17 +23,31 @@ class Confirm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: double.infinity,
-              height: 140,
-              clipBehavior: Clip.hardEdge,
-              child: FittedBox(
-                  child: Image.asset(item.imageUrl), fit: BoxFit.cover),
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(10),
+            Stack(children: [
+              Container(
+                width: double.infinity,
+                height: 140,
+                clipBehavior: Clip.hardEdge,
+                child: FittedBox(
+                    child: Image.asset(item.imageUrl), fit: BoxFit.cover),
+                decoration: BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
-            ),
+              Container(
+                alignment: Alignment.topLeft,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_sharp,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed('/');
+                  },
+                ),
+              ),
+            ]),
             Container(
               height: 300,
               padding:
