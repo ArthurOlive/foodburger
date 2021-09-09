@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodburger/home_page.dart';
+import 'package:foodburger/screens/menu_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class AppWidget extends StatelessWidget {
             brightness: Brightness.light),
         home: DefaultTabController(
           length: 3,
-          child: HomePage(),
+          child: MenuPage(),
         ));
   }
 }

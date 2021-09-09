@@ -3,12 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:foodburger/style/font_text.dart';
 
 class Burger extends StatelessWidget {
+  final Image? imageIcon;
   final String? name;
   final String? description;
   final String? price;
   final String? cod;
 
-  const Burger({Key? key, this.name, this.price, this.description, this.cod})
+  const Burger(
+      {Key? key,
+      this.name,
+      this.price,
+      this.description,
+      this.cod,
+      this.imageIcon})
       : super(key: key);
 
   @override
@@ -17,23 +24,26 @@ class Burger extends StatelessWidget {
       margin: new EdgeInsets.only(
         bottom: 5,
         top: 10,
-        left: 15,
-        right: 15,
+        left: 10,
+        right: 10,
+      ),
+      padding: new EdgeInsets.only(
+        bottom: 0,
+        top: 0,
+        left: 0,
+        right: 0,
       ),
       child: InkWell(
         onTap: () {
-          print("Clicked container");
+          print("Clicked container $cod");
         },
+        borderRadius: BorderRadius.circular(5),
         child: Ink(
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(5),
           ),
           child: Container(
-            padding: new EdgeInsets.symmetric(
-              horizontal: 10.0,
-              vertical: 10.0,
-            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +51,7 @@ class Burger extends StatelessWidget {
                 Container(
                   width: 140,
                   height: 140,
-                  child: Image.asset("assets/images/burger1.png"),
+                  child: imageIcon,
                 ),
                 Flexible(
                   child: Container(

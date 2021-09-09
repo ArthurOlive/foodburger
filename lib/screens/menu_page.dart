@@ -1,8 +1,10 @@
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodburger/components/burger_container.dart';
 
-class HomePage extends StatelessWidget {
+class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,7 @@ class HomePage extends StatelessWidget {
           centerTitle: true,
           bottom: TabBar(
             tabs: [
-              Tab(text: "Hamburger"),
+              Tab(text: "Hambúrger"),
               Tab(text: "Acompanhamentos"),
               Tab(text: "Bebidas"),
             ],
@@ -30,32 +32,7 @@ class HomePage extends StatelessWidget {
       body: TabBarView(
         children: [
           ListView(
-            children: [
-              Burger(
-                name: "Especial da casa",
-                price: "12.80",
-                description: "Descricao",
-                cod: "001",
-              ),
-              Burger(
-                name: "Especial da casa",
-                price: "12.80",
-                description: "Descricao",
-                cod: "001",
-              ),
-              Burger(
-                name: "Especial da casa",
-                price: "12.80",
-                description: "Descricao",
-                cod: "001",
-              ),
-              Burger(
-                name: "Especial da casa",
-                price: "12.80",
-                description: "Descricao",
-                cod: "001",
-              ),
-            ],
+            children: didMoutBurgers(),
           ),
           ListView(
             children: [],
@@ -85,11 +62,18 @@ class HomePage extends StatelessWidget {
   }
 }
 
-BoxDecoration myBoxDecoration() {
-  return BoxDecoration(
-    border: Border.all(
-      color: Colors.red, //                   <--- border color
-      width: 5.0,
-    ),
-  );
+List<Burger> didMoutBurgers() {
+  List<Burger> list = [];
+
+  for (int i = 1; i <= 4; i++) {
+    list.add(Burger(
+      imageIcon: Image.asset("assets/images/burger$i.png"),
+      name: "Especial da casa",
+      price: "12.80",
+      description: "Descricao",
+      cod: "$i",
+    ));
+  }
+
+  return list;
 }

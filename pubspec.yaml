@@ -53,6 +53,9 @@ flutter:
   assets:     
     - assets/images/icon_hamburger.png
     - assets/images/burger1.png
+    - assets/images/burger2.png
+    - assets/images/burger3.png
+    - assets/images/burger4.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
