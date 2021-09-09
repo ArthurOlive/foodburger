@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodburger/controllers/cart_list_controller.dart';
 import 'package:foodburger/models/Item.dart';
 import 'package:foodburger/style/font_text.dart';
 
@@ -77,6 +78,15 @@ class Confirm extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
+                  if (CartListController.instance.itens.containsKey(item.cod)) {
+                    CartListController.instance.itens[item.cod] =
+                        CartListController.instance.itens[item.cod]! + 1;
+                  } else {
+                    CartListController.instance.itens[item.cod] = 1;
+                  }
+
+                  print(CartListController.instance.itens);
+
                   Navigator.of(context).pop();
                 },
                 child: const Text('Comprar'),

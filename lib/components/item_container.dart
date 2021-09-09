@@ -47,7 +47,6 @@ class Food extends StatelessWidget {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => Confirm(item: item)),
           );
-          print("Clicked container $cod");
         },
         borderRadius: BorderRadius.circular(5),
         child: Ink(
