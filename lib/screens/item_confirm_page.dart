@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodburger/components/title_bar.dart';
 import 'package:foodburger/controllers/cart_list_controller.dart';
 import 'package:foodburger/models/Item.dart';
 import 'package:foodburger/style/font_text.dart';
@@ -11,16 +12,7 @@ class Confirm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset('assets/images/icon_hamburger.png'),
-              Text("FoodBurger"),
-            ],
-          ),
-        ),
+        title: TitleBar(),
         backgroundColor: Color.fromRGBO(31, 31, 31, 1),
         centerTitle: true,
       ),
@@ -87,7 +79,7 @@ class Confirm extends StatelessWidget {
 
                   print(CartListController.instance.itens);
 
-                  Navigator.of(context).pop();
+                  Navigator.of(context).pushReplacementNamed('/');
                 },
                 child: const Text('Comprar'),
                 style: ButtonStyle(),

@@ -44,7 +44,7 @@ class Food extends StatelessWidget {
               item = ItemListController.instance.itens[i];
             }
           }
-          Navigator.of(context).push(
+          Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => Confirm(item: item)),
           );
         },

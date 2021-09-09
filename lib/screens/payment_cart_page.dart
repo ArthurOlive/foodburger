@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodburger/components/bottom_menu.dart';
 import 'package:foodburger/components/item_cart.dart';
+import 'package:foodburger/components/title_bar.dart';
 import 'package:foodburger/controllers/cart_list_controller.dart';
 import 'package:foodburger/controllers/item_list_controller.dart';
 import 'package:foodburger/style/font_text.dart';
@@ -18,16 +19,7 @@ class _PaymentCartState extends State<PaymentCart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset('assets/images/icon_hamburger.png'),
-              Text("FoodBurger"),
-            ],
-          ),
-        ),
+        title: TitleBar(),
         backgroundColor: Color.fromRGBO(31, 31, 31, 1),
         centerTitle: true,
       ),

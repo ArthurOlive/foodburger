@@ -23,13 +23,11 @@ class BottomNavigatorMenu extends StatelessWidget {
       ],
       currentIndex: option,
       onTap: (int index) {
-        print("$index");
         switch (index) {
           case 0:
             Navigator.of(context).pushReplacementNamed("/");
             break;
           case 1:
-            print("B");
             Navigator.of(context).pushReplacementNamed("/history");
             break;
           case 2:
