@@ -14,7 +14,26 @@ class HistoryPage extends StatelessWidget {
         backgroundColor: Color.fromRGBO(31, 31, 31, 1),
         centerTitle: true,
       ),
-      body: Container(),
+      body: Container(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.notifications_off_sharp,
+                    size: 50,
+                  ),
+                  Text("Sem histórico"),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigatorMenu(
         option: 1,
       ),
