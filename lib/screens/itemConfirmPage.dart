@@ -84,14 +84,12 @@ class Confirm extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  if (CartListController.instance.itens.containsKey(item)) {
+                  if (CartListController.instance.itens.containsKey(item.cod)) {
                     CartListController.instance.itens[item.cod] =
                         CartListController.instance.itens[item.cod]! + 1;
                   } else {
                     CartListController.instance.itens[item.cod] = 1;
                   }
-
-                  print(CartListController.instance.itens);
 
                   Navigator.of(context).pushReplacementNamed('/');
                 },

@@ -16,9 +16,11 @@ class PaymentCart extends StatefulWidget {
 
 class _PaymentCartState extends State<PaymentCart> {
   double price = 0.0;
+  List<FoodCart> list = [];
 
   @override
   Widget build(BuildContext context) {
+    didMoutItems();
     return Scaffold(
       appBar: AppBar(
         title: TitleBar(),
@@ -49,7 +51,7 @@ class _PaymentCartState extends State<PaymentCart> {
                       ],
                     ),
                   ),
-                ...didMoutItems(),
+                ...list,
               ],
             ),
           ),
@@ -69,7 +71,7 @@ class _PaymentCartState extends State<PaymentCart> {
                   ),
                 ),
                 Text(
-                  'R\$ $price',
+                  'R\$ ' + price.toStringAsFixed(2),
                   style: subtitleText(),
                 ),
               ],
@@ -97,10 +99,10 @@ class _PaymentCartState extends State<PaymentCart> {
     );
   }
 
-  List<FoodCart> didMoutItems() {
+  void didMoutItems() {
     //Poderia ter um metodo que pegaria os itens do banco
-    List<FoodCart> list = [];
     setState(() {
+      list = [];
       price = 0;
     });
 
@@ -110,16 +112,19 @@ class _PaymentCartState extends State<PaymentCart> {
           CartListController
                   .instance.itens[ItemListController.instance.itens[i].cod]! >
               0) {
-        list.add(FoodCart(
-          imageIcon: Image.asset(
-            ItemListController.instance.itens[i].imageUrl,
-            fit: BoxFit.cover,
-          ),
-          name: ItemListController.instance.itens[i].name,
-          price: ItemListController.instance.itens[i].price,
-          description: ItemListController.instance.itens[i].description,
-          cod: ItemListController.instance.itens[i].cod,
-        ));
+        setState(() {
+          list.add(FoodCart(
+            imageIcon: Image.asset(
+              ItemListController.instance.itens[i].imageUrl,
+              fit: BoxFit.cover,
+            ),
+            function: didMoutItems,
+            name: ItemListController.instance.itens[i].name,
+            price: ItemListController.instance.itens[i].price,
+            description: ItemListController.instance.itens[i].description,
+            cod: ItemListController.instance.itens[i].cod,
+          ));
+        });
 
         setState(() {
           price += CartListController
@@ -128,7 +133,5 @@ class _PaymentCartState extends State<PaymentCart> {
         });
       }
     }
-
-    return list;
   }
 }

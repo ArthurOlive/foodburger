@@ -9,12 +9,14 @@ class FoodCart extends StatelessWidget {
   final String? description;
   final String? price;
   final int cod;
+  final Function function;
 
   const FoodCart(
       {Key? key,
       this.name,
       this.price,
       this.description,
+      required this.function,
       required this.cod,
       this.imageIcon})
       : super(key: key);
@@ -82,6 +84,7 @@ class FoodCart extends StatelessWidget {
                         IconButton(
                           onPressed: () {
                             CartListController.instance.itens.remove(cod);
+                            function();
                           },
                           icon:
                               Icon(Icons.remove_circle, color: Colors.red[400]),
