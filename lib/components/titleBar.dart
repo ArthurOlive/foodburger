@@ -29,9 +29,9 @@ class TitleBar extends StatelessWidget {
                 size: 12,
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 5),
                 child: Text(
-                  "Online",
+                  "Aberto agora",
                   style: TextStyle(
                     fontFamily: 'Quicksand',
                     fontSize: 12,

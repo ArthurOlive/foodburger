@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodburger/app_widget.dart';
+import 'package:foodburger/appWidget.dart';
 
 void main() {
   runApp(AppWidget());

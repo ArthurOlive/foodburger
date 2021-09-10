@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:foodburger/models/Item.dart';
-import 'package:foodburger/models/item_type.dart';
+import 'package:foodburger/models/itemType.dart';
 
 class ItemListController extends ChangeNotifier {
   //singleton

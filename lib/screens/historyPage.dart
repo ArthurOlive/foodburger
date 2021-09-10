@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodburger/components/bottom_menu.dart';
-import 'package:foodburger/components/title_bar.dart';
+import 'package:foodburger/components/bottomMenu.dart';
+import 'package:foodburger/components/titleBar.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({Key? key}) : super(key: key);

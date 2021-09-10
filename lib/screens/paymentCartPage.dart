@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodburger/components/bottom_menu.dart';
-import 'package:foodburger/components/item_cart.dart';
-import 'package:foodburger/components/title_bar.dart';
-import 'package:foodburger/controllers/cart_list_controller.dart';
-import 'package:foodburger/controllers/item_list_controller.dart';
-import 'package:foodburger/style/font_text.dart';
+import 'package:foodburger/components/bottomMenu.dart';
+import 'package:foodburger/components/itemCart.dart';
+import 'package:foodburger/components/titleBar.dart';
+import 'package:foodburger/controllers/cartListController.dart';
+import 'package:foodburger/controllers/itemListController.dart';
+import 'package:foodburger/style/fontText.dart';
 
 class PaymentCart extends StatefulWidget {
   const PaymentCart({Key? key}) : super(key: key);
@@ -15,6 +15,8 @@ class PaymentCart extends StatefulWidget {
 }
 
 class _PaymentCartState extends State<PaymentCart> {
+  double price = 0.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,7 @@ class _PaymentCartState extends State<PaymentCart> {
           Container(
             margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
             color: Colors.white,
-            height: 300,
+            constraints: BoxConstraints(minHeight: 300),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -67,7 +69,7 @@ class _PaymentCartState extends State<PaymentCart> {
                   ),
                 ),
                 Text(
-                  'R\$ 0,00',
+                  'R\$ $price',
                   style: subtitleText(),
                 ),
               ],
@@ -98,6 +100,9 @@ class _PaymentCartState extends State<PaymentCart> {
   List<FoodCart> didMoutItems() {
     //Poderia ter um metodo que pegaria os itens do banco
     List<FoodCart> list = [];
+    setState(() {
+      price = 0;
+    });
 
     for (int i = 0; i < ItemListController.instance.itens.length; i++) {
       if (CartListController.instance.itens
@@ -115,6 +120,12 @@ class _PaymentCartState extends State<PaymentCart> {
           description: ItemListController.instance.itens[i].description,
           cod: ItemListController.instance.itens[i].cod,
         ));
+
+        setState(() {
+          price += CartListController
+                  .instance.itens[ItemListController.instance.itens[i].cod]! *
+              double.parse(ItemListController.instance.itens[i].price);
+        });
       }
     }
 

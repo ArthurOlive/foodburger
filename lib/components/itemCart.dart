@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodburger/controllers/cart_list_controller.dart';
-import 'package:foodburger/controllers/item_list_controller.dart';
-import 'package:foodburger/style/font_text.dart';
+import 'package:foodburger/controllers/cartListController.dart';
+import 'package:foodburger/style/fontText.dart';
 
 class FoodCart extends StatelessWidget {
   final Image? imageIcon;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:foodburger/components/title_bar.dart';
-import 'package:foodburger/controllers/cart_list_controller.dart';
+import 'package:foodburger/components/titleBar.dart';
+import 'package:foodburger/controllers/cartListController.dart';
 import 'package:foodburger/models/Item.dart';
-import 'package:foodburger/style/font_text.dart';
+import 'package:foodburger/style/fontText.dart';
 
 class Confirm extends StatelessWidget {
   final Item item;

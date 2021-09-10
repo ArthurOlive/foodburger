@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodburger/controllers/cart_list_controller.dart';
-import 'package:foodburger/controllers/item_list_controller.dart';
+import 'package:foodburger/controllers/cartListController.dart';
 
 class BottomNavigatorMenu extends StatelessWidget {
   final int option;

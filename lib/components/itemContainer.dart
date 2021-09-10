@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodburger/controllers/item_list_controller.dart';
-import 'package:foodburger/models/Item.dart';
-import 'package:foodburger/screens/item_confirm_page.dart';
-import 'package:foodburger/style/font_text.dart';
+import 'package:foodburger/controllers/itemListController.dart';
+import 'package:foodburger/screens/itemConfirmPage.dart';
+import 'package:foodburger/style/fontText.dart';
 
 class Food extends StatelessWidget {
   final Image? imageIcon;

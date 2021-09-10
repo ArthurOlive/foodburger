@@ -1,4 +1,4 @@
-import 'package:foodburger/models/item_type.dart';
+import 'package:foodburger/models/itemType.dart';
 
 class Item {
   int _cod;

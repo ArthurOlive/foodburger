@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodburger/components/bottom_menu.dart';
-import 'package:foodburger/components/item_container.dart';
-import 'package:foodburger/components/title_bar.dart';
-import 'package:foodburger/controllers/item_list_controller.dart';
-import 'package:foodburger/models/item_type.dart';
+import 'package:foodburger/components/bottomMenu.dart';
+import 'package:foodburger/components/itemContainer.dart';
+import 'package:foodburger/components/titleBar.dart';
+import 'package:foodburger/controllers/itemListController.dart';
+import 'package:foodburger/models/itemType.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({Key? key}) : super(key: key);
